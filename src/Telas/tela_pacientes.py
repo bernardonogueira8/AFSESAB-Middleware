@@ -9,8 +9,8 @@ from ttkbootstrap.constants import *
 from sqlalchemy.orm import Session
 
 # Importa a conexão de banco de dados e o modelo diretamente
-from afsesab_logistica.database import SessionLocal
-from afsesab_logistica.models import paciente
+from database import SessionLocal
+from models import Paciente
 
 
 class TelaPacientes(ttk.Frame):

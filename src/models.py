@@ -62,4 +62,4 @@ class Paciente(Base):
     id = Column(Integer, primary_key=True, index=True)
     nome_do_paciente = Column(String(150), nullable=False)
     cpf = Column(String(20), index=True, nullable=False)
-    cnes_dispensadora = Column(String(20), index=True, nullable=False)
+    cnes_dispensadora = Column(String(20), index=True, nullable=False)
