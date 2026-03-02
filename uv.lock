@@ -11,7 +11,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "afsesab-rest"
+name = "afsesab-middleware"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

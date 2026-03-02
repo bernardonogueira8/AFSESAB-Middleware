@@ -1,7 +1,7 @@
 [project]
-name = "afsesab-rest"
+name = "afsesab-middleware"
 version = "0.1.0"
-description = "Add your description here"
+description = "Aplicação robusta desenvolvida em Python que atua como um nó logístico e interface gráfica desktop para unidades de saúde"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
