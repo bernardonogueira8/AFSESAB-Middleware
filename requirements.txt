@@ -1,7 +1,0 @@
-ttkbootstrap
-httpx
-pandas
-fastapi
-uvicorn
-sqlalchemy 
-psycopg2-bina
