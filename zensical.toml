@@ -263,16 +263,14 @@ toggle.name = "Switch to light mode"
 #link = "https://github.com/user/repo"
 
 [project.plugins.mkdocstrings]
-# Aqui você define o handler globalmente para o plugin
-handlers = { python = { paths = ["src"] } }
+# Define o handler de python e suas opções em um único lugar
+handlers.python.paths = ["src"]
+handlers.python.inventories = ["https://docs.python.org/3/objects.inv"]
 
 [project.plugins.mkdocstrings.handlers.python.options]
-# Apenas opções que o mkdocstrings-python REALMENTE aceita
 docstring_style = "google"
 inherited_members = true
 show_source = false
-# Se quiser inventários, coloque aqui:
-import = ["https://docs.python.org/3/objects.inv"]
 
 [project.markdown_extensions.pymdownx.highlight]
 auto_title = true
