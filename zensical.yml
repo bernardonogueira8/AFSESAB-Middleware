@@ -4,13 +4,9 @@ theme:
     name: material
     language: pt-BR
 
-docs_dir: docs
 plugins:
     - search # Plugin nativo de busca [11]
     - mkdocstrings: # Transforma nosso código em documentação [12]
           handlers:
               python:
                   paths: [src] # Diz ao mkdocstrings para ler os arquivos Python na pasta src [5]
-nav:
-    - Início: index.md
-    - Referência da API: api_reference.md

@@ -1,29 +1,32 @@
-name: Documentation
+name: ci
 on:
-  push:
-    branches:
-      - master
-      - main
+    push:
+        branches:
+            - master
+            - main
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: write
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/configure-pages@v5
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - run: pip install zensical
-      - run: zensical build --clean
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
-      - uses: actions/deploy-pages@v4
-        id: deployment
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Instalar o uv
+              uses: astral-sh/setup-uv@v2
+
+            - name: Instalar Python e Dependências
+              run: uv python install && uv sync
+
+            - name: Compilar a Documentação (Zensical Build)
+              # Ao invés de gh-deploy, nós apenas mandamos ele construir o HTML.
+              # Ele vai gerar uma pasta "./site" [2].
+              run: uv run zensical build
+
+            - name: Realizar o Deploy no GitHub Pages
+              # Usamos uma Action nativa dedicada para empurrar a pasta "site" para a branch "gh-pages"
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./site
+                  force_orphan: true
