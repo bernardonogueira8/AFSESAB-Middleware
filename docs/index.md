@@ -1,4 +1,8 @@
-# AFSESAB - Middleware
+---
+icon: Lucide/house
+---
+
+# Painel Inicial
 
 _Resumo do Projeto: O AFSESAB Middleware é uma aplicação robusta desenvolvida em Python que atua como um nó logístico e interface gráfica desktop para unidades de saúde. Seu objetivo é realizar a interoperabilidade segura com a API do AFSESAB, otimizando a operação de ponta._
 

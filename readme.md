@@ -10,19 +10,25 @@
 
 </div>
 
-# 📄 Tipo do Projeto/Nome do Projeto
+_Resumo do Projeto: O AFSESAB Middleware é uma aplicação robusta desenvolvida em Python que atua como um nó logístico e interface gráfica desktop para unidades de saúde. Seu objetivo é realizar a interoperabilidade segura com a API do AFSESAB, otimizando a operação de ponta._
 
-![status-em-andamento](https://user-images.githubusercontent.com/62897976/185768581-1d051a52-2e60-4378-b31d-39028cbfb5c8.svg)
+## Estrutura do Projeto
 
-> Resumo do Projeto: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+Aqui está a estrutura de diretórios ideal (no padrão src layout) para dividirmos o código do seu projeto:
 
-## 🎯 Implementações/Features
-
-- [ ] Começando
-- [ ] Estilos Globais do Projeto
-- [ ] Estruturação/Estilização Avançada
-- [ ] Resolvendo Bugs
-- [ ] Projeto Finalizado
+```
+src
+├── init.py
+├── main.py        # Responsável apenas pelo Login, Menu e Roteamento
+├── api_client.py  # Gerencia a comunicação HTTP e o Token JWT
+├── database.py    # Configura a conexão e a sessão (Engine) do PostgreSQL
+├── models.py      # Contém as tabelas do SQLAlchemy (UnidadeLocal, paciente, etc.)
+└── telas/         # Módulo dedicado aos componentes visuais
+  ├── init.py
+  ├── tela_estoque.py
+  ├── tela_pacientes.py
+  └── tela_recebimento.py
+```
 
 ## 🤝 Colaboradores
 
@@ -42,15 +48,3 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
   </tr>
 </table>
-
-## 📕 Referencias e Links Complementares
-
-**Link 1**
-
-- aaa
-- bbb
-
-**Link 2**
-
-- aaa
-- bbb

@@ -12,13 +12,13 @@
         <meta name="author" content="Bernardo Nogueira">
       
       
-        <link rel="canonical" href="https://bernardonogueira8.github.io/AFSESAB-Middleware/api_reference/">
+        <link rel="canonical" href="https://bernardonogueira8.github.io/AFSESAB-Middleware/main/">
       
       
         <link rel="prev" href="./..">
       
       
-        <link rel="next" href="../markdown/">
+        <link rel="next" href="../tela/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Referência de Código - Documentation</title>
+        <title>Módulo Principal - Documentation</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#referencia-de-codigo" class="md-skip">
+        <a href="#modulo-principal" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Referência de Código
+              Módulo Principal
             
           </span>
         </div>
@@ -222,10 +222,12 @@
         
   
   
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+  
   <span class="md-ellipsis">
     
   
-    AFSESAB - Middleware
+    Painel Inicial
   
 
     
@@ -258,10 +260,12 @@
           
   
   
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-app-window" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M10 4v4M2 8h20M6 4v4"/></svg>
+  
   <span class="md-ellipsis">
     
   
-    Referência de Código
+    Módulo Principal
   
 
     
@@ -276,10 +280,12 @@
         
   
   
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-app-window" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M10 4v4M2 8h20M6 4v4"/></svg>
+  
   <span class="md-ellipsis">
     
   
-    Referência de Código
+    Módulo Principal
   
 
     
@@ -306,10 +312,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB" class="md-nav__link">
+  <a href="#main" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ClienteAFSESAB
+        main
       
     </span>
   </a>
@@ -317,24 +323,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB.autenticar" class="md-nav__link">
+  <a href="#main.AppLogistica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        autenticar
+        AppLogistica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AppLogistica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main.AppLogistica.limpar_area_conteudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        limpar_area_conteudo
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB.consultar_estoque_unidade" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#main.AppLogistica.renderizar_conteudo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        consultar_estoque_unidade
+        renderizar_conteudo
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -353,16 +376,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../markdown/" class="md-nav__link">
+      <a href="../tela/" class="md-nav__link">
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-layout-panel-left" viewBox="0 0 24 24"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>
   
   <span class="md-ellipsis">
     
   
-    Markdown in 5min
+    Interface Gráfica
   
 
     
@@ -403,10 +426,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB" class="md-nav__link">
+  <a href="#main" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ClienteAFSESAB
+        main
       
     </span>
   </a>
@@ -414,24 +437,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB.autenticar" class="md-nav__link">
+  <a href="#main.AppLogistica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        autenticar
+        AppLogistica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AppLogistica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main.AppLogistica.limpar_area_conteudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        limpar_area_conteudo
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#api_client.ClienteAFSESAB.consultar_estoque_unidade" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#main.AppLogistica.renderizar_conteudo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        consultar_estoque_unidade
+        renderizar_conteudo
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,18 +498,57 @@
                 
                   
 
-<h1 id="referencia-de-codigo">Referência de Código<a class="headerlink" href="#referencia-de-codigo" title="Permanent link">&para;</a></h1>
-<p>Abaixo está a documentação extraída automaticamente das nossas classes Python.</p>
+<h1 id="modulo-principal">Módulo Principal<a class="headerlink" href="#modulo-principal" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="main"></a>
+    <div class="doc doc-contents first">
+
+        <p>Ponto de entrada do AFSESAB Middleware Logístico.</p>
+<p>Este módulo inicializa a interface gráfica principal, o cliente HTTPX para
+a API e gerencia o roteamento de componentes visuais baseados na escolha do menu.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
 
 
 <div class="doc doc-object doc-class">
 
 
 
-<a id="api_client.ClienteAFSESAB"></a>
-    <div class="doc doc-contents first">
+<h2 id="main.AppLogistica" class="doc doc-heading">
+            <code>AppLogistica</code>
 
 
+<a href="#main.AppLogistica" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="ttkbootstrap.Window">Window</span></code></p>
+
+
+
+        <p>Janela Principal e Controlador de Rotas da aplicação.</p>
 
 
 
@@ -495,15 +574,15 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="api_client.ClienteAFSESAB.autenticar" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">autenticar</span><span class="p">(</span><span class="n">usuario</span><span class="p">,</span> <span class="n">senha</span><span class="p">)</span></code>
+<h3 id="main.AppLogistica.limpar_area_conteudo" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">limpar_area_conteudo</span><span class="p">()</span></code>
 
-<a href="#api_client.ClienteAFSESAB.autenticar" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#main.AppLogistica.limpar_area_conteudo" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Realiza o POST de login e armazena o token na instância da classe.</p>
+        <p>Destrói os widgets antigos do painel direito antes de injetar a nova tela.</p>
 
 
     </div>
@@ -513,15 +592,15 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="api_client.ClienteAFSESAB.consultar_estoque_unidade" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">consultar_estoque_unidade</span><span class="p">(</span><span class="n">cnes</span><span class="p">)</span></code>
+<h3 id="main.AppLogistica.renderizar_conteudo" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">renderizar_conteudo</span><span class="p">(</span><span class="n">modulo</span><span class="p">)</span></code>
 
-<a href="#api_client.ClienteAFSESAB.consultar_estoque_unidade" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#main.AppLogistica.renderizar_conteudo" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Faz um GET na API do AFSESAB injetando o Token JWT no Header da requisição.</p>
+        <p>O Roteador: Apaga a tela atual e Injeta a Classe da tela solicitada.</p>
 
 
     </div>
@@ -539,10 +618,22 @@
 
 
 
+  </div>
+
+    </div>
+
+</div>
 
 
 
 
+
+
+
+
+
+  
+  
 
 
 
@@ -574,7 +665,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="./.." class="md-footer__link md-footer__link--prev" aria-label="Anterior: AFSESAB - Middleware">
+          <a href="./.." class="md-footer__link md-footer__link--prev" aria-label="Anterior: Painel Inicial">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -584,20 +675,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                AFSESAB - Middleware
+                Painel Inicial
               </div>
             </div>
           </a>
         
         
           
-          <a href="../markdown/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Markdown in 5min">
+          <a href="../tela/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Interface Gráfica">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Markdown in 5min
+                Interface Gráfica
               </div>
             </div>
             <div class="md-footer__button md-icon">
