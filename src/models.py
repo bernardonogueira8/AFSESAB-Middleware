@@ -54,7 +54,7 @@ class Atendimento(Base):
     tipo_acao = Column(String(20), nullable=False)
 
 
-class paciente(Base):
+class Paciente(Base):
     """
     Tabela de cache de pacientes vinculados a uma unidade dispensadora.
     """

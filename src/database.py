@@ -1,10 +1,17 @@
+"""
+Módulo de configuração e infraestrutura do Banco de Dados.
+
+Gerencia a engine de conexão com o PostgreSQL, o pool de conexões 
+e a fábrica de sessões (SessionLocal).
+"""
+
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-# 1. Configuração da URL de Conexão Localhost
-SQLALCHEMY_DATABASE_URL = "postgresql+psycopg://postgres:root@localhost:5432/postgres"
+from models import Base, UnidadeLocal, Atendimento, LogImportacao, Paciente
 
-# 2. Configuração da Engine do SQLAlchemy
+
+SQLALCHEMY_DATABASE_URL = "postgresql+psycopg://postgres:root@localhost:5432/postgres"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
     client_encoding='utf8',
@@ -16,13 +23,6 @@ engine = create_engine(
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# 3. Base Declarativa para as Tabelas
-Base = declarative_base()
-
-# ==========================================
-# FUNÇÃO DE INICIALIZAÇÃO ("START")
-# ==========================================
-
 
 def init_db():
     """
@@ -31,9 +31,8 @@ def init_db():
     Não altera ou apaga dados de tabelas que já existem.
     """
     print("Verificando e inicializando banco de dados local...")
+
+    # O comando create_all lê o metadata da Base e gera os comandos CREATE TABLE
     Base.metadata.create_all(bind=engine)
+
     print("Banco de dados pronto para uso.")
-
-
-if __name__ == "__main__":
-    init_db()
