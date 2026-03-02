@@ -1,0 +1,10 @@
+site_name: My MkDocs Material Documentation
+theme:
+    name: material
+
+plugins:
+    - mkdocstrings:
+          default_handler: python
+          handlers:
+              python:
+                  paths: [src] # search packages in the src folder
