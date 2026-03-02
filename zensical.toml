@@ -14,8 +14,6 @@ copyright = """
 Copyright &copy; 2026 Bernardo Nogueira
 """
 
-
-
 nav = [
 { "Pagina Inicial" = "index.md" },
 { "Markdown in 5min" = "interface.md" },
@@ -67,19 +65,7 @@ nav = [
 #
 #favicon = "images/favicon.png"
 
-# Zensical supports more than 60 different languages. This means that the
-# labels and tooltips that Zensical's templates produce are translated.
-# The "language" option allows you to set the language used. This language
-# is also indicated in the HTML head element to help with accessibility
-# and guide search engines and translation tools.
-#
-# The default language is "en" (English). It is possible to create
-# sites with multiple languages and configure a language selector. See
-# the documentation for details.
-#
-# Read more:
-# - https://zensical.org/docs/setup/language/
-#
+
 language = "pt-br"
 
 # Zensical provides a number of feature toggles that change the behavior
@@ -276,9 +262,10 @@ toggle.name = "Switch to light mode"
 #icon = "fontawesome/brands/github"
 #link = "https://github.com/user/repo"
 
-[project.plugins.mkdocstrings.handlers.python]
-inventories = ["https://docs.python.org/3/objects.inv"]
-paths = ["src"]
+[project.plugins.mkdocstrings]
+# Define o handler de python e suas opções em um único lugar
+handlers.python.paths = ["src"]
+handlers.python.inventories = ["https://docs.python.org/3/objects.inv"]
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "google"
