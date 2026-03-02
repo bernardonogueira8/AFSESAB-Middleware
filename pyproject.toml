@@ -21,9 +21,3 @@ dependencies = [
 members = [
     "uv",
 ]
-
-[dependency-groups]
-dev = [
-    "mkdocstrings[python]>=1.0.3",
-    "zensical>=0.0.24",
-]
