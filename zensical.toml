@@ -1,39 +1,25 @@
 [project]
 
-site_name = "AFSESAB - Middleware Docs"
-site_author = "Bernardo Nogueira da Silva"
-copyright = """
-Bernardo Nogueira Copyright &copy; 2026
+site_name = "AFSESAB - Middleware"
+repo_url = "https://github.com/bernardonogueira8/AFSESAB-Middleware"
+
+site_description = """
+O AFSESAB Middleware é uma aplicação robusta desenvolvida em Python que atua como um nó logístico e interface gráfica desktop para unidades de saúde. Seu objetivo é realizar a interoperabilidade segura com a API central legada do AFSESAB, otimizando a operação de ponta.
 """
-language = "pt-Br"
 
-[project.plugins.mkdocstrings.handlers.python]
-inventories = ["https://docs.python.org/3/objects.inv"]
-paths = ["src"]
-
-[project.plugins.mkdocstrings.handlers.python.options]
-docstring_style = "google"
-inherited_members = true
-show_source = false
-
-
-
+site_author = "Bernardo Nogueira da Silva"
 
 #site_url = "https://www.example.com/"
-site_description = "A new project generated from the default template project."
+copyright = """
+Copyright &copy; 2026 Bernardo Nogueira
+"""
 
 
-# Zensical supports both implicit navigation and explicitly defined navigation.
-# If you decide not to define a navigation here then Zensical will simply
-# derive the navigation structure from the directory structure of your
-# "docs_dir". The definition below demonstrates how a navigation structure
-# can be defined using TOML syntax.
-#
-# Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+
+nav = [
+{ "Pagina Inicial" = "index.md" },
+{ "Markdown in 5min" = "interface.md" },
+]
 
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
@@ -81,6 +67,20 @@ site_description = "A new project generated from the default template project."
 #
 #favicon = "images/favicon.png"
 
+# Zensical supports more than 60 different languages. This means that the
+# labels and tooltips that Zensical's templates produce are translated.
+# The "language" option allows you to set the language used. This language
+# is also indicated in the HTML head element to help with accessibility
+# and guide search engines and translation tools.
+#
+# The default language is "en" (English). It is possible to create
+# sites with multiple languages and configure a language selector. See
+# the documentation for details.
+#
+# Read more:
+# - https://zensical.org/docs/setup/language/
+#
+language = "pt-br"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
@@ -276,4 +276,14 @@ toggle.name = "Switch to light mode"
 #icon = "fontawesome/brands/github"
 #link = "https://github.com/user/repo"
 
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src"]
 
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+inherited_members = true
+show_source = false
+
+[project.markdown_extensions.pymdownx.highlight]
+auto_title = true

@@ -41,9 +41,6 @@ requires-dist = [
     { name = "zensical", specifier = ">=0.0.24" },
 ]
 
-[package.metadata.requires-dev]
-dev = []
-
 [[package]]
 name = "annotated-doc"
 version = "0.0.4"
