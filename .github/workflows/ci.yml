@@ -18,5 +18,15 @@ jobs:
             - name: Instalar Python e Dependências
               run: uv python install && uv sync
 
+            - name: Compilar a Documentação (Zensical Build)
+              # Ao invés de gh-deploy, nós apenas mandamos ele construir o HTML.
+              # Ele vai gerar uma pasta "./site" [2].
+              run: uv run zensical build
+
             - name: Realizar o Deploy no GitHub Pages
-              run: uv run zensical gh-deploy --force
+              # Usamos uma Action nativa dedicada para empurrar a pasta "site" para a branch "gh-pages"
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./site
+                  force_orphan: true
