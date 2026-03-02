@@ -20,58 +20,6 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 # ==========================================
-# DEFINIÇÃO DAS TABELAS (SCHEMAS)
-# ==========================================
-
-
-class UnidadeLocal(Base):
-    __tablename__ = "unidades"
-    id = Column(Integer, primary_key=True, index=True)
-    cnes = Column(String(20), unique=True, index=True, nullable=False)
-    nome_da_unidade = Column(String(150), nullable=False)
-
-
-class Atendimento(Base):
-    '''
-    Tabela para armazenar os atendimentos realizados, criar coluna de saldo excedente(Verificar se a quantidade dispensada é maior que a autorizada, caso positivo ter um aviso e solicitar confirmação, caso negativo a dispensação seja menor que autorizada, ainda será possível dispensar o resto -qtd dispensado menos qtd autorizado - dentro da frequência) e coluna de frequência (Verificar se o período de atendimento em dias) para avisar sempre se estar dentro do frequência para mais ou para menos
-    periodo_de_tratamento - continuo ou intermitente
-    N de atendimentos por paciente - para verificar se o paciente é novo ou já tem histórico de atendimento (criar um banco para pacientes novos no sistema, porem velhos)
-    '''
-    __tablename__ = "atendimentos"
-    id = Column(Integer, primary_key=True, index=True)
-    cnes_dispensadora = Column(String(20), index=True, nullable=False)
-    nome_do_paciente = Column(String(150), nullable=False)
-    cpf = Column(String(20), index=True, nullable=False)
-    n_sei = Column(String(50), nullable=False)
-    qtd_autorizada = Column(Integer, nullable=False)
-    cod_simpas = Column(String(20), nullable=False)
-    lote_dispensado = Column(String(50), nullable=False)
-    qtd_dispensada = Column(Integer, nullable=False)
-    nome_lista_de_medicamentos = Column(String(250), nullable=False)
-    frequencia_de_atendimento = Column(String(50), nullable=False)
-    periodo_de_atendimento_meses = Column(String(20), nullable=False)
-    periodo_de_tratamento = Column(String(50), nullable=False)
-    data_do_atendimento = Column(String(20), nullable=False)
-    data_do_retorno = Column(String(20), nullable=False)
-    tipo_acao = Column(String(20), nullable=False)
-
-
-class LogImportacao(Base):
-    __tablename__ = "log_importacao"
-    id = Column(Integer, primary_key=True, index=True)
-    data_hora = Column(String(20), nullable=False)
-    status = Column(String(20), nullable=False)
-    detalhes = Column(String(250), nullable=True)
-
-
-class paciente(Base):
-    __tablename__ = "pacientes"
-    id = Column(Integer, primary_key=True, index=True)
-    nome_do_paciente = Column(String(150), nullable=False)
-    cpf = Column(String(20), index=True, nullable=False)
-    cnes_dispensadora = Column(String(20), index=True, nullable=False)
-
-# ==========================================
 # FUNÇÃO DE INICIALIZAÇÃO ("START")
 # ==========================================
 
