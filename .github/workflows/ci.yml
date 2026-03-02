@@ -19,4 +19,4 @@ jobs:
               run: uv python install && uv sync
 
             - name: Realizar o Deploy no GitHub Pages
-              run: uv run mkdocs gh-deploy --force
+              run: uv run zensical gh-deploy --force
